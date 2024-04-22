@@ -19,5 +19,11 @@ def in_order(node):
 
 # Post-order traversal
 def post_order(node):
-    return []
+    if node is None:
+        return []
+    res = []
+    res.extend(post_order(node.left))
+    res.extend(post_order(node.right))
+    res.append(node.data)
+    return res
 

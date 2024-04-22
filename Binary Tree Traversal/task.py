@@ -9,7 +9,13 @@ def pre_order(node):
 
 # In-order traversal
 def in_order(node):
-    return []
+    if node is None:
+        return []
+    res = []
+    res.extend(in_order(node.left))
+    res.append(node.data)
+    res.extend(in_order(node.right))
+    return res
 
 # Post-order traversal
 def post_order(node):
